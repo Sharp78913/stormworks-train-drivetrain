@@ -34,10 +34,13 @@ The system was developed with interoperability and modular vehicle systems in mi
 
 ### Drivetrain Control
 - Throttle management for a target speed or direct throttle from the driver
-- Traction control
 - ABS
 - Reverser handling
 - Real-time drivetrain state processing
+
+### Traction Control
+- Predictive method, Based off wheel speed sensor.
+- Corrective method, Based off when slip is detected
 
 ### Braking Systems
 - Dynamic braking logic
@@ -77,63 +80,10 @@ to remain within Stormworks microcontroller limitations.
 
 ---
 
-## Project Structure
-
-```text
-stormworks-train-drivetrain/
-├── README.md
-├── vehicle/
-│   └── drivetrain_controller.xml
-├── lua/
-│   ├── drivetrain_source.lua
-│   └── drivetrain_compact.lua
-├── images/
-└── docs/
-```
-
----
-
-## Files
-
-### `drivetrain_controller.xml`
-Full Stormworks microcontroller containing:
-- Logic connections
-- System interfaces
-- Embedded Lua script
-- Control architecture
-
-### `drivetrain_source.lua`
-Readable and documented source version of the drivetrain controller.
-
-### `drivetrain_compact.lua`
-Optimized in-game version designed around Stormworks character limits.
-
----
-
-## Screenshots
-
-_Add screenshots here_
-
-Suggested screenshots:
-- Driver desk
-- Locomotive control interface
-- Drivetrain diagnostics
-- Logic overview
-- TCP integration example
-
-Example image markdown:
-
-```md
-![Driver Desk](images/driver_desk.png)
-```
-
----
-
 ## Future Improvements
 
 Planned or possible future development:
-- Expanded train telemetry
-- Advanced traction management
+- More traction methods for different train setups
 - Multi-unit synchronization
 - Configurable control profiles
 - Additional TCP interoperability features
