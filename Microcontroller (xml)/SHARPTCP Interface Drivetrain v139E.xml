@@ -1,0 +1,2072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<microprocessor name="SHARP-TCP [Interface] Drivetrain v1.3.9.E" description="Controls brakes and drivetrain systems" width="5" length="2" id_counter="626" id_counter_node="48" sym6="7880" sym7="6184" sym8="5144" sym9="4984">
+	<nodes>
+		<n id="22" component_id="152">
+			<node label="Module -&gt; Interface" mode="1" type="5" description="Communicates with Drivetrain Module">
+				<position z="1"/>
+			</node>
+		</n>
+		<n id="23" component_id="154">
+			<node label="Interface -&gt; Module" type="5" description="Communicates with Drivetrain Module"/>
+		</n>
+		<n id="33" component_id="230">
+			<node label="UI" mode="1" type="5" description="N1: Set Speed (m/s); N2: Brake input; N3: Regen input; B1: Wheel Slip; B2: Emergency Set (push); B3: Emergency Reset (push); B4:">
+				<position x="1" z="1"/>
+			</node>
+		</n>
+		<n id="35" component_id="278">
+			<node label="Brake" type="1" description="Outputs brakes to wheels">
+				<position x="3" z="1"/>
+			</node>
+		</n>
+		<n id="36" component_id="281">
+			<node label="Throttle" type="1" description="Outputs throttle to motors / Valves">
+				<position x="3"/>
+			</node>
+		</n>
+		<n id="37" component_id="340">
+			<node label="Slip" mode="1" description="Slip input from Bogie">
+				<position x="2" z="1"/>
+			</node>
+		</n>
+		<n id="41" component_id="293">
+			<node label="Current Speed" mode="1" type="1" description="Current speed (m/s, directional)">
+				<position x="4"/>
+			</node>
+		</n>
+		<n id="42" component_id="299">
+			<node label="Wheel RPS" mode="1" type="1" description="RPS at the wheels">
+				<position x="4" z="1"/>
+			</node>
+		</n>
+		<n id="43" component_id="349">
+			<node label="Activate Engine" description="Connect to engine for remote engine activation (optional)">
+				<position x="2"/>
+			</node>
+		</n>
+		<n id="45" component_id="396">
+			<node label="UI Return" type="5" description="B1: Emergency Pending; B2: Remote Engine; B3: Emergency Status; N1: Target Speed; N2: Target Brakes;">
+				<position x="1"/>
+			</node>
+		</n>
+		<n id="46" component_id="532">
+			<node label="Regen / Dynamic brakes" type="1" description="Connect to a clutch to a gen and wheel rps grid">
+				<position x="1"/>
+			</node>
+		</n>
+		<n id="47" component_id="565">
+			<node label="Reverser for steam" description="The input signal to be processed.">
+				<position x="1" z="1"/>
+			</node>
+		</n>
+	</nodes>
+	<group>
+		<data>
+			<inputs/>
+			<outputs/>
+		</data>
+		<components>
+			<c type="40">
+				<object id="156" count="2">
+					<pos x="10.25" y="-15.5"/>
+					<inc component_id="371"/>
+					<in1 component_id="516"/>
+					<in2 component_id="499"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="166" i="3">
+					<pos x="-6.5" y="-17.5"/>
+					<in1 component_id="152"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="170">
+					<pos x="-6.5" y="-16"/>
+					<in1 component_id="152"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="223" i="1">
+					<pos x="-6.5" y="-16.5"/>
+					<in1 component_id="152"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="242" i="3">
+					<pos x="6" y="-16.25"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="369" i="2">
+					<pos x="-6.5" y="-17"/>
+					<in1 component_id="152"/>
+				</object>
+			</c>
+			<c type="41">
+				<object id="371" count="3" offset="3">
+					<pos x="8.5" y="-15.75"/>
+					<in1 component_id="422"/>
+					<in2 component_id="415"/>
+					<in3 component_id="242"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="378">
+					<pos x="-1.25" y="-19.5"/>
+					<in1 component_id="384"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="379" m="2">
+					<pos x="-4.75" y="-22"/>
+					<in1 component_id="223"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="382">
+					<pos x="-4.75" y="-22.5"/>
+					<in1 component_id="386"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="384" i="4">
+					<pos x="-6.5" y="-18"/>
+					<in1 component_id="152"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="385" i="1">
+					<pos x="-6.5" y="-19.5"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="386" i="2">
+					<pos x="-6.5" y="-20"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="41">
+				<object id="397" count="3">
+					<pos x="11" y="-20.25"/>
+					<inc component_id="436"/>
+					<in1 component_id="446"/>
+					<in2 component_id="622"/>
+					<in3 component_id="450"/>
+				</object>
+			</c>
+			<c type="49">
+				<object id="398">
+					<pos x="4" y="-20.25"/>
+					<in1 component_id="421"/>
+					<in2 component_id="561"/>
+				</object>
+			</c>
+			<c type="27">
+				<object id="404" on="0.2" off="0.2">
+					<pos x="7.5" y="-20.25"/>
+					<in1 component_id="421"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="406" i="4">
+					<pos x="-6.5" y="-21"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="407">
+					<pos x="-1.25" y="-20"/>
+					<in1 component_id="385"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="414">
+					<pos x="-1.25" y="-20.5"/>
+					<in1 component_id="406"/>
+				</object>
+			</c>
+			<c type="2">
+				<object id="415">
+					<pos x="0.5" y="-19.5"/>
+					<in1 component_id="407"/>
+					<in2 component_id="414"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="418" i="5">
+					<pos x="-6.5" y="-21.5"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="24">
+				<object id="421">
+					<pos x="2.25" y="-20.25"/>
+					<in1 component_id="449"/>
+					<in2 component_id="425"/>
+				</object>
+			</c>
+			<c type="24">
+				<object id="422">
+					<pos x="7.5" y="-19.75"/>
+					<in1 component_id="445"/>
+					<in2 component_id="425"/>
+				</object>
+			</c>
+			<c type="50">
+				<object id="425">
+					<pos x="0.5" y="-22"/>
+					<in1 component_id="429"/>
+					<in2 component_id="562"/>
+				</object>
+			</c>
+			<c type="24">
+				<object id="429">
+					<pos x="-1.25" y="-22"/>
+					<in1 component_id="447"/>
+					<in2 component_id="430"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="430" m="0">
+					<pos x="-1.25" y="-22.5"/>
+					<in1 component_id="425"/>
+				</object>
+			</c>
+			<c type="40">
+				<object id="436" count="3">
+					<pos x="11" y="-19"/>
+					<in1 component_id="516"/>
+					<in2 component_id="513"/>
+					<in3/>
+				</object>
+			</c>
+			<c type="44">
+				<object id="387" l="Is emergency" on="Yes" off="No" m="1">
+					<pos x="9.25" y="-19"/>
+					<in1 component_id="422"/>
+				</object>
+			</c>
+			<c type="44">
+				<object id="439" l="Remote Engine" on="On" off="Off" m="1">
+					<pos x="9.25" y="-11.25"/>
+					<in1 component_id="520"/>
+				</object>
+			</c>
+			<c type="47">
+				<object id="445" e="(x&amp;y&amp;z)|(w&amp;!(a^b))">
+					<pos x="5.75" y="-21.25"/>
+					<in1 component_id="390"/>
+					<in2 component_id="421"/>
+					<in3 component_id="398"/>
+					<in4 component_id="407"/>
+					<in5 component_id="170"/>
+					<in6 component_id="223"/>
+				</object>
+			</c>
+			<c type="2">
+				<object id="446">
+					<pos x="9.25" y="-19.75"/>
+					<in1 component_id="422"/>
+					<in2 component_id="404"/>
+				</object>
+			</c>
+			<c type="46">
+				<object id="447" e="x|y|z">
+					<pos x="-3" y="-22.5"/>
+					<in1 component_id="448"/>
+					<in2 component_id="379"/>
+					<in3 component_id="382"/>
+				</object>
+			</c>
+			<c type="48">
+				<object id="448" m="2">
+					<pos x="-4.75" y="-21.5"/>
+					<in1 component_id="418"/>
+				</object>
+			</c>
+			<c type="46">
+				<object id="449" e="x&amp;(y|z)&amp;!w">
+					<pos x="0.5" y="-20.75"/>
+					<in1 component_id="170"/>
+					<in2 component_id="378"/>
+					<in3 component_id="414"/>
+					<in4 component_id="425"/>
+				</object>
+			</c>
+			<c type="2">
+				<object id="450">
+					<pos x="9.25" y="-20.5"/>
+					<in1 component_id="166"/>
+					<in2 component_id="422"/>
+				</object>
+			</c>
+			<c type="44">
+				<object id="491" l="Emergency pending" on="on" off="off" m="1">
+					<pos x="4" y="-19"/>
+					<in1 component_id="421"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="497">
+					<pos x="7.5" y="-5"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="498" i="4">
+					<pos x="7.5" y="-8"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="499" i="3">
+					<pos x="6" y="-15.75"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="500" i="2">
+					<pos x="7.5" y="-6.5"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="502" i="5">
+					<pos x="7.5" y="-9.5"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="513" i="2">
+					<pos x="5.75" y="-4.25"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="516">
+					<pos x="5.75" y="-2.75"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="1">
+				<object id="520">
+					<pos x="7.5" y="-11.5"/>
+					<in1 component_id="622"/>
+					<in2 component_id="521"/>
+				</object>
+			</c>
+			<c>
+				<object id="521">
+					<pos x="5.75" y="-13.25"/>
+					<in1 component_id="515"/>
+				</object>
+			</c>
+			<c type="45">
+				<object id="523" e="x*3.6">
+					<pos x="7.5" y="-2.75"/>
+					<in1 component_id="516"/>
+				</object>
+			</c>
+			<c type="15">
+				<object id="561">
+					<pos x="2.25" y="-20.75"/>
+					<n text="3" value="3"/>
+				</object>
+			</c>
+			<c type="15">
+				<object id="562">
+					<pos x="-1.25" y="-23"/>
+					<n text="5" value="5"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="566">
+					<pos x="7.5" y="-2"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="576" i="3">
+					<pos x="7.5" y="-7.25"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="504" l="Target Speed (kmh)" m="2">
+					<pos x="9.25" y="-3"/>
+					<in1 component_id="523"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="577" l="Current speed (kmh)" m="2">
+					<pos x="9.25" y="-3.75"/>
+					<in1 component_id="615"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="505" l="Speed PID out" m="2">
+					<pos x="9.25" y="-4.5"/>
+					<in1 component_id="513"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="506" l="Throttle Out" m="2">
+					<pos x="9.25" y="-5.25"/>
+					<in1 component_id="497"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="508" l="Brake Out" m="2">
+					<pos x="9.25" y="-6"/>
+					<in1 component_id="617"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="509" l="Dynamics out" m="2">
+					<pos x="9.25" y="-6.75"/>
+					<in1 component_id="500"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="575" l="Predictive traction factor" m="2">
+					<pos x="9.25" y="-7.5"/>
+					<in1 component_id="576"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="507" l="Corrective traction factor" m="2">
+					<pos x="9.25" y="-8.25"/>
+					<in1 component_id="498"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="512" l="Wheel rps" m="2">
+					<pos x="9.25" y="-9"/>
+					<in1 component_id="621"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="43">
+				<object id="511" l="Wheel / Speed diff" m="2">
+					<pos x="9.25" y="-9.75"/>
+					<in1 component_id="502"/>
+					<in2 component_id="515"/>
+				</object>
+			</c>
+			<c type="56">
+				<object id="589" script='scr,i,o,m=screen,input,output,math
+pgn,pgb,gn,gb,sn,sb=property.getNumber,property.getBool,i.getNumber,i.getBool,o.setNumber,o.setBool
+abs,min,max,pi=m.abs,m.min,m.max,m.pi
+
+function clamp(a,b,c) -- value, min, max
+	return max(b, min(c, a))
+end
+
+function lerp(a,b,t)
+	t = max(0, min(1, t))
+	return a*(1-t)+b*t
+end
+
+-- Predictive anti-slip module
+function predictive_antislip(max_allow_error, wheel_size)
+	return {
+		max_allow_error = max_allow_error,
+		wheel_size = wheel_size,
+		allowed_error = 0,
+		traction_gain = 0,
+		traction_limit_p = 0,
+
+		run = function(self, current, rps, slip, o_s)
+			local wheel_speed_error = abs((current / self.wheel_size) - rps)
+			local limit_adjust_p = 0
+
+			if slip then
+				limit_adjust_p = 1 / 100
+			elseif self.allowed_error - wheel_speed_error &gt;= 0.4 - 0.05 * (max(0, 10 - abs(current))) then
+				limit_adjust_p = -1 / 600
+			end
+
+			self.allowed_error = self.max_allow_error-- clamp(self.allowed_error - limit_adjust_p, 2.25, self.max_allow_error)
+			local target_error = self.allowed_error*.95
+			
+			local lower = self.allowed_error - 0.3
+
+			if wheel_speed_error &gt;= self.allowed_error or slip then
+				self.traction_gain = min(self.traction_gain + 0.02, 12)
+			elseif wheel_speed_error &lt;= lower then
+				self.traction_gain = max(self.traction_gain - 0.005, 0)
+			end
+			
+
+			local traction_limit = 1-clamp((wheel_speed_error-self.allowed_error)*(self.traction_gain + 3)*8/3,0,1)
+				
+			local traction_limit_f = traction_limit * 0.005 + self.traction_limit_p * 0.995
+			self.traction_limit_p = traction_limit_f
+			return traction_limit_f, wheel_speed_error end
+	}
+end
+
+-- Corrective anti-slip module
+function corrective_antislip(sensitivity)
+	return {
+		sensitivity = sensitivity,
+		slip_long = 0,
+		grip_duration = 0,
+		traction_limit = 0,
+		last_slip = 0,
+		last_slip_speed = 0,
+		slip_pulse = false,
+
+		run = function(self, thr_o, thr_i, cur_speed, slip, reset_pulse)
+			local moving = abs(cur_speed) &gt; 0.5
+			local close_last_thr = abs(thr_o - self.last_slip) &lt; 0.02 and abs(self.last_slip)&gt;0.05
+			local close_last_speed = close_last_thr and abs(cur_speed - self.last_slip_speed) &lt; 0.5
+			local limit_adjust = 0
+
+			if slip then
+				self.slip_long = min(self.slip_long + 1, 21)
+				if not self.slip_pulse then
+					self.last_slip = thr_o
+					self.last_slip_speed = cur_speed
+				end
+				self.grip_duration = 0
+				if close_last_thr then
+					limit_adjust = 1 / (4500 - self.slip_long * 210)
+				else
+					limit_adjust = 1 / 2000
+				end
+			elseif self.grip_duration &gt; 20 and moving then
+				self.slip_long = 0
+				if close_last_thr then
+					if not close_last_speed then
+						limit_adjust = -1 / 20000
+					end
+				else
+					limit_adjust = -1 / 2000
+				end
+			else
+				self.grip_duration = min(self.grip_duration + 1, 61)
+			end
+
+			if reset_pulse then
+				self.traction_limit = 0
+			end
+
+			self.traction_limit = clamp(self.traction_limit - limit_adjust * self.sensitivity, 0.25, min(1, abs(thr_i + 0.1)))
+			self.slip_pulse = slip
+
+			return self.traction_limit
+		end
+	}
+end
+
+
+wheel_size = pgb("Wheel size") and pi or 3*pi/5
+traction_system = pgn("Traction system")
+thr_manip = pgb("Throttle out")
+
+predictive_as = predictive_antislip(2.85, wheel_size)
+corrective_as = corrective_antislip(1)
+brake_corrective_as = corrective_antislip(3)
+dyn_corrective_as = corrective_antislip(3)
+
+thr_out = 0
+brake_out = 0
+dyn_out = 0
+
+function onTick()
+set_speed = gn(1)
+current_speed = gn(2)
+thr_in = gn(3)
+brake_in = gn(4)
+dyn_in = gn(5)
+wheel_rps= gn(6)
+
+reverse = gb(3)
+reset_pulse = gb(4)
+slip = gb(7)
+overspeed = gb(8)
+
+
+--thr abs or -1 to 1
+if thr_manip then
+	if reverse then
+		thr = abs(min(thr_in, 0))
+	else
+		thr = max(thr_in, 0)
+	end
+else
+	thr = thr_in
+end
+
+predictive_out, wheel_speed_diff = predictive_as:run(current_speed, wheel_rps, slip, overspeed)
+corrective_out = corrective_as:run(thr_out, thr, current_speed, slip, reset_pulse)
+brake_as_out = brake_corrective_as:run(brake_out, 1, abs(current_speed)+1, slip, false)
+dyn_as_out = dyn_corrective_as:run(dyn_out, min(dyn_in+.5,1), current_speed, slip, false)
+
+if traction_system == 1 then -- corrective / steam style
+	--thr_out = lerp(0,thr,corrective_out)
+	thr_out = clamp(thr, -corrective_out, corrective_out)
+elseif traction_system == 2 then -- predictive / wheel rps
+	thr_out = lerp(0,thr,predictive_out)
+elseif traction_system == 3 then -- nothing
+	thr_out = thr * 1
+else
+	thr_out = thr * 0
+end
+
+brake_out = brake_in * brake_as_out
+dyn_out = dyn_in * dyn_as_out
+
+sn(1, thr_out)
+sn(2, brake_out)
+sn(3, dyn_out)
+sn(4, predictive_out)
+sn(5, corrective_out)
+sn(6, wheel_speed_diff)
+sn(7, wheel_rps)
+sb(1, reverse)
+
+end
+'>
+					<pos x="5.75" y="-2"/>
+					<in1 component_id="624"/>
+				</object>
+			</c>
+			<c type="56">
+				<object id="590" script='scr,i,o,m=screen,input,output,math
+pgn,pgb,gn,gb,sn,sb=property.getNumber,property.getBool,i.getNumber,i.getBool,o.setNumber,o.setBool
+abs,min,max,pi=m.abs,m.min,m.max,m.pi
+
+
+min_speed=2/3.6 -- 2 kmh target speed deadzone
+max_diff_p=3.1 --pgn("Max difference between Wheels and Speed ( default 3.3)")
+dir_t_dead = 0.05 -- direct thr deadzone
+dyn_max_coast = 0.8 -- dynamic brakes max on coast mode
+steam_rev = false
+sp_pid_max = 1
+sp_pid_min = -1
+dyn_coast = 0
+current_speed_hold = 0
+pid_a=pgn("Speed Pid aggressiveness")
+max_accel=pgn("Acceleration limit (m/s^2)")/10
+p_brake=true--pgb("Parking Brake if No Master")
+cut_thr_brk=pgb("Throttle when Braking")
+cut_thr_dyn=pgb("Throttle when Dynamic Braking")
+Thr_Type=pgn("Throttle Type") -- 1 = set speed, 2 = direct (no pid all balls)
+coast_type=pgn("Coast Style") -- 1=thr no care, 2 = thr limit to dir, 3 = dynamics + 2
+abs_thr=pgb("Throttle out")
+
+
+function clamp(a,b,c) -- value, min, max
+	return max(b, min(c, a))
+end
+
+function round1(x)
+	if x &gt;= 0 then
+		return m.floor(x * 10 + 0.5) / 10
+	else
+		return m.ceil(x * 10 - 0.5) / 10
+	end
+end
+
+function PID(Kp, Ki, Kd, alpha)
+	return {
+		Kp = Kp,
+		Ki = Ki,
+		Kd = Kd,
+		alpha = alpha,
+		integral = 0,
+		last_error = 0,
+		filtered_error = 0,
+		run = function(self, sp, pv, reset, Min, Max)
+			local error = sp - pv
+			local Kp_s = self.Kp
+			local Kd_s = self.Kd
+			local Ki_s = self.Ki
+			if reset then
+				self.integral = 0
+			end
+			self.filtered_error = self.alpha * error + (1 - self.alpha) * self.filtered_error
+			local derivative = self.filtered_error - self.last_error
+			self.last_error = self.filtered_error
+			local p_term = Kp_s * error
+			local d_term = Kd_s * derivative
+			self.integral = clamp(self.integral + error * Ki_s, Min, Max)
+			local output = p_term + self.integral + d_term
+			return clamp(output, Min, Max)
+		end
+	}
+end
+
+speed_pid = PID(0.01*pid_a, 0.0001*pid_a, 0.005*pid_a,0.9)
+
+
+function onTick()
+master = gb(1)
+master_in_chain = gb(2)
+opposite = gb(3) -- opposite dir to master
+tcp_emergency = gb(4)
+tcp_req_emergency = gb(5)
+tcp_engine = gb(6)
+
+ui_slip = gb(7) -- un used ??
+ui_emergency_set = gb(8)
+ui_emergency_reset = gb(9)
+ui_engine = gb(10)
+ui_pass_emergency_set = gb(11)
+p_brake_disable = gb(12)
+
+tcp_t = gn(4) -- main bus speed
+tcp_b = gn(5) -- main bus brake
+tcp_dyn = 0 -- tcp dynamic brake -- needs assinged ch
+current_speed = gn(7)
+ui_t = gn(8) -- ui speed
+ui_b = gn(9) -- ui brake
+ui_dyn = gn(10) -- ui dynamic brakes
+
+
+-- who is controller
+if master then				-- this is master
+	set_speed = ui_t
+	set_brake = ui_b
+	set_dyn = ui_dyn
+	
+elseif not master_in_chain then -- no master in chain
+	set_speed = 0
+	if p_brake and not p_brake_disable then
+		set_brake = 1
+		set_dyn = 1
+	else
+		set_brake = 0
+		set_dyn = 0
+	end
+	
+else						-- master in chain
+	if opposite then
+		set_speed = -tcp_t
+	else
+		set_speed = tcp_t
+	end
+	set_brake = tcp_b
+	set_dyn = tcp_dyn
+end
+
+
+-- 	reset pulse for 1 tick
+r_2 = set_dyn &gt; 0.05 or abs(set_speed)&lt;1 or set_brake &gt; 0.05
+reset_pulse = (r_2 and not r_1) or (r_1 and not r_2)
+r_1 = r_2
+
+
+-- 	Target speed and Limits rate of change
+if Thr_Type == 1 then -- set_speed thr type
+	set_speed_out = set_speed &gt;= 0 and clamp(set_speed, -1, current_speed + max_accel) 
+									or clamp(set_speed, current_speed - max_accel, 1)
+
+elseif Thr_Type == 2 then -- direct thr type
+	dir_speed_gain = round1(set_speed)*max_accel*2
+	
+	set_speed_out = current_speed &gt;= 0 and current_speed + clamp(dir_speed_gain,-5,max_accel)
+										or current_speed + clamp(dir_speed_gain,-max_accel,5)
+else
+	set_speed_out = 0
+end
+
+-- 	Coast limits
+overspeed = abs(current_speed) &gt; abs(set_speed_out)+.5 
+			and current_speed * set_speed_out &gt;= -0.01 -- for case of target is +10 and cur = -5
+
+if abs(current_speed) &lt; min_speed*2 or (coast_type==1 and not abs_thr) then
+	-- if near min speed or using thr to slow down
+	sp_pid_max = 1
+	sp_pid_min = -1
+	dyn_coast = 0
+elseif (coast_type &gt;= 2 and overspeed) or abs_thr then
+	-- no thr used to slow down or thr range is 0 to 1, needs to slow for reverse
+	-- this only engages if overspeed
+	if set_speed_out &gt; 0 then
+		sp_pid_max = 1
+		sp_pid_min = -0.01
+	else
+		sp_pid_max = 0.01
+		sp_pid_min = -1
+	end
+	
+	if coast_type == 3 and overspeed then
+	-- same as above but also apply dynamic brakes
+		dyn_coast = clamp(((abs(current_speed)-abs(set_speed))*.2),0,dyn_max_coast)
+	else
+		dyn_coast = 0
+	end
+else
+	sp_pid_max = 1
+	sp_pid_min = -1
+	dyn_coast = 0
+end
+
+-- 	Throttle to extenders
+thr_out_on = (cut_thr_brk or set_brake &lt;= 0.02) and
+			 (cut_thr_dyn or set_dyn &lt;= 0.02) and
+			 abs(set_speed) &gt;= min_speed
+
+if thr_out_on then
+	if Thr_Type == 1 or not master then -- set speed
+		thr_out = speed_pid:run(set_speed_out, current_speed, reset_pulse, sp_pid_min, sp_pid_max)
+	elseif Thr_Type == 2 then -- direct throttle
+		if abs(set_speed) &lt; dir_t_dead then
+			thr_out = 0
+		else
+			thr_out = set_speed -- set_speed input is now direct thr
+		end
+	end
+else
+	thr_out = 0
+end
+
+
+--	Emergency fun and giggles that still need to be done but F that
+req_emergency = ui_emergency_set or ui_pass_emergency_set
+emergency_stop = false
+--
+
+-- 	reverser
+if abs(current_speed) &lt; min_speed*3 then
+	steam_rev_out = set_speed_out &lt; 0
+end
+	
+
+engine_out = tcp_engine or ui_engine
+brake_out = set_brake
+dyn_out = set_dyn + dyn_coast
+
+sn(1, set_speed_out)
+sn(2, current_speed)
+sn(3, thr_out)
+sn(4, brake_out)
+sn(5, dyn_out)
+sn(6, gn(11)) -- wheel rps remove for 1.4
+
+sb(1, master)
+sb(2, engine_out)
+sb(3, steam_rev_out)
+sb(4, emergency_stop)
+sb(5, req_emergency)
+sb(6, reset_pulse)
+sb(7, gb(13)) -- slip, remove for 1.4
+sb(8, overspeed)
+
+end'>
+					<pos x="4" y="-2"/>
+					<in1 component_id="605"/>
+				</object>
+			</c>
+			<c type="20">
+				<object id="591" name="Throttle Type">
+					<pos x="4" y="2"/>
+					<items>
+						<i l="Set Speed">
+							<v text="1" value="1"/>
+						</i>
+						<i l="Direct throttle">
+							<v text="2" value="2"/>
+						</i>
+					</items>
+				</object>
+			</c>
+			<c type="19">
+				<object id="592" name="Speed Pid aggressiveness">
+					<pos x="4" y="1.5"/>
+					<min text="1" value="1"/>
+					<max text="10" value="10"/>
+					<int text="0.5" value="0.5"/>
+					<v text="5" value="5"/>
+				</object>
+			</c>
+			<c type="19">
+				<object id="593" name="Acceleration limit (m/s^2)">
+					<pos x="4" y="1"/>
+					<min text="2" value="2"/>
+					<max text="20" value="20"/>
+					<int text="0.5" value="0.5"/>
+					<v text="4" value="4"/>
+				</object>
+			</c>
+			<c type="33">
+				<object id="594" n="Throttle when Braking" on="Throttle enabled" off="Throttle disabled" v="true">
+					<pos x="4" y="0.5"/>
+				</object>
+			</c>
+			<c type="33">
+				<object id="595" n="Throttle when Dynamic Braking" on="Throttle enabled" off="Throttle disabled" v="true">
+					<pos x="4"/>
+				</object>
+			</c>
+			<c type="20">
+				<object id="597" name="Coast Style" i="2">
+					<pos x="4" y="-1"/>
+					<items>
+						<i l="Use throttle to slow down">
+							<v text="1" value="1"/>
+						</i>
+						<i l="Thr is 0 if coast">
+							<v text="2" value="2"/>
+						</i>
+						<i l="Apply Dynamics if coast">
+							<v text="3" value="3"/>
+						</i>
+					</items>
+				</object>
+			</c>
+			<c type="20">
+				<object id="598" name="Traction system">
+					<pos x="5.75"/>
+					<items>
+						<i l="Corrective">
+							<v text="1" value="1"/>
+						</i>
+						<i l="Predictive">
+							<v text="2" value="2"/>
+						</i>
+						<i l="None">
+							<v text="3" value="3"/>
+						</i>
+					</items>
+				</object>
+			</c>
+			<c type="33">
+				<object id="599" n="Wheel size" on="Medium" off="Small" v="true">
+					<pos x="5.75" y="-0.5"/>
+				</object>
+			</c>
+			<c type="33">
+				<object id="600" n="Throttle out" on="Steam / Clutch" off="-1 to 1" v="true">
+					<pos x="5.75" y="-1"/>
+				</object>
+			</c>
+			<c type="40">
+				<object id="605" count="5" offset="6">
+					<pos x="2.25" y="-3"/>
+					<inc component_id="606"/>
+					<in1 component_id="293"/>
+					<in2 component_id="607"/>
+					<in3 component_id="608"/>
+					<in4 component_id="614"/>
+					<in5/>
+				</object>
+			</c>
+			<c type="41">
+				<object id="606" count="7" offset="6">
+					<pos x="2.25" y="-1.25"/>
+					<inc component_id="152"/>
+					<in1 component_id="609"/>
+					<in2 component_id="610"/>
+					<in3 component_id="611"/>
+					<in4 component_id="612"/>
+					<in5 component_id="384"/>
+					<in6 component_id="613"/>
+					<in7/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="607">
+					<pos x="0.5" y="-2.5"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="608" i="1">
+					<pos x="0.5" y="-2.75"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="609">
+					<pos x="0.5"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="610" i="1">
+					<pos x="0.5" y="-0.25"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="611" i="2">
+					<pos x="0.5" y="-0.5"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="612" i="3">
+					<pos x="0.5" y="-0.75"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="613" i="5">
+					<pos x="0.5" y="-1.25"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="614" i="2">
+					<pos x="0.5" y="-3"/>
+					<in1 component_id="230"/>
+				</object>
+			</c>
+			<c type="45">
+				<object id="615" e="x*3.6">
+					<pos x="7.5" y="-3.5"/>
+					<in1 component_id="616"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="616" i="1">
+					<pos x="5.75" y="-3.5"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="617" i="1">
+					<pos x="7.5" y="-5.75"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="44">
+				<object id="618" l="OverSpeed" on="on" off="off" m="1">
+					<pos x="9.25" y="-10.25"/>
+					<in1 component_id="620"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="619" i="7">
+					<pos x="5.75" y="-10.25"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="1">
+				<object id="620">
+					<pos x="7.5" y="-10.5"/>
+					<in1 component_id="619"/>
+					<in2 component_id="521"/>
+				</object>
+			</c>
+			<c type="31">
+				<object id="621" i="6">
+					<pos x="7.5" y="-8.75"/>
+					<in1 component_id="589"/>
+				</object>
+			</c>
+			<c type="33">
+				<object id="390" n="Remote emergency" on="Enabled" off="Disabled" v="true">
+					<pos x="4" y="-23"/>
+				</object>
+			</c>
+			<c type="33">
+				<object id="515" n="Debug tooltips" on="Dont show" off="Show">
+					<pos x="7.5" y="-13.25"/>
+				</object>
+			</c>
+			<c type="29">
+				<object id="622" i="1">
+					<pos x="5.75" y="-11.25"/>
+					<in1 component_id="590"/>
+				</object>
+			</c>
+			<c type="40">
+				<object id="624" count="1" offset="5">
+					<pos x="4" y="-4.25"/>
+					<inc component_id="625"/>
+					<in1 component_id="299"/>
+				</object>
+			</c>
+			<c type="41">
+				<object id="625" count="1" offset="6">
+					<pos x="4" y="-3.5"/>
+					<inc component_id="590"/>
+					<in1 component_id="340"/>
+				</object>
+			</c>
+		</components>
+		<components_bridge>
+			<c type="4">
+				<object id="152">
+					<pos x="-8.5" y="-1.75"/>
+				</object>
+			</c>
+			<c type="5">
+				<object id="154">
+					<pos x="12" y="-15"/>
+					<in1 component_id="156"/>
+				</object>
+			</c>
+			<c type="4">
+				<object id="230">
+					<pos x="-8.5" y="-2.25"/>
+				</object>
+			</c>
+			<c type="3">
+				<object id="278">
+					<pos x="11" y="-5.5"/>
+					<in1 component_id="617"/>
+				</object>
+			</c>
+			<c type="3">
+				<object id="281">
+					<pos x="11" y="-4.75"/>
+					<in1 component_id="497"/>
+				</object>
+			</c>
+			<c type="2">
+				<object id="293">
+					<pos x="0.5" y="-2"/>
+				</object>
+			</c>
+			<c type="2">
+				<object id="299">
+					<pos x="2.25" y="-4.25"/>
+				</object>
+			</c>
+			<c>
+				<object id="340">
+					<pos x="2.25" y="-3.5"/>
+				</object>
+			</c>
+			<c type="1">
+				<object id="349">
+					<pos x="11" y="-11"/>
+					<in1 component_id="622"/>
+				</object>
+			</c>
+			<c type="5">
+				<object id="396">
+					<pos x="12.75" y="-19.5"/>
+					<in1 component_id="397"/>
+				</object>
+			</c>
+			<c type="3">
+				<object id="532">
+					<pos x="11" y="-6.25"/>
+					<in1 component_id="500"/>
+				</object>
+			</c>
+			<c type="1">
+				<object id="565">
+					<pos x="11" y="-1.75"/>
+					<in1 component_id="566"/>
+				</object>
+			</c>
+		</components_bridge>
+		<groups/>
+		<component_states>
+			<c0 id="156" count="2">
+				<pos x="10.25" y="-15.5"/>
+				<inc component_id="371"/>
+				<in1 component_id="516"/>
+				<in2 component_id="499"/>
+			</c0>
+			<c1 id="166" i="3">
+				<pos x="-6.5" y="-17.5"/>
+				<in1 component_id="152"/>
+			</c1>
+			<c2 id="170">
+				<pos x="-6.5" y="-16"/>
+				<in1 component_id="152"/>
+			</c2>
+			<c3 id="223" i="1">
+				<pos x="-6.5" y="-16.5"/>
+				<in1 component_id="152"/>
+			</c3>
+			<c4 id="242" i="3">
+				<pos x="6" y="-16.25"/>
+				<in1 component_id="230"/>
+			</c4>
+			<c5 id="369" i="2">
+				<pos x="-6.5" y="-17"/>
+				<in1 component_id="152"/>
+			</c5>
+			<c6 id="371" count="3" offset="3">
+				<pos x="8.5" y="-15.75"/>
+				<in1 component_id="422"/>
+				<in2 component_id="415"/>
+				<in3 component_id="242"/>
+			</c6>
+			<c7 id="378">
+				<pos x="-1.25" y="-19.5"/>
+				<in1 component_id="384"/>
+			</c7>
+			<c8 id="379" m="2">
+				<pos x="-4.75" y="-22"/>
+				<in1 component_id="223"/>
+			</c8>
+			<c9 id="382">
+				<pos x="-4.75" y="-22.5"/>
+				<in1 component_id="386"/>
+			</c9>
+			<c10 id="384" i="4">
+				<pos x="-6.5" y="-18"/>
+				<in1 component_id="152"/>
+			</c10>
+			<c11 id="385" i="1">
+				<pos x="-6.5" y="-19.5"/>
+				<in1 component_id="230"/>
+			</c11>
+			<c12 id="386" i="2">
+				<pos x="-6.5" y="-20"/>
+				<in1 component_id="230"/>
+			</c12>
+			<c13 id="397" count="3">
+				<pos x="11" y="-20.25"/>
+				<inc component_id="436"/>
+				<in1 component_id="446"/>
+				<in2 component_id="622"/>
+				<in3 component_id="450"/>
+			</c13>
+			<c14 id="398">
+				<pos x="4" y="-20.25"/>
+				<in1 component_id="421"/>
+				<in2 component_id="561"/>
+			</c14>
+			<c15 id="404" on="0.2" off="0.2">
+				<pos x="7.5" y="-20.25"/>
+				<in1 component_id="421"/>
+			</c15>
+			<c16 id="406" i="4">
+				<pos x="-6.5" y="-21"/>
+				<in1 component_id="230"/>
+			</c16>
+			<c17 id="407">
+				<pos x="-1.25" y="-20"/>
+				<in1 component_id="385"/>
+			</c17>
+			<c18 id="414">
+				<pos x="-1.25" y="-20.5"/>
+				<in1 component_id="406"/>
+			</c18>
+			<c19 id="415">
+				<pos x="0.5" y="-19.5"/>
+				<in1 component_id="407"/>
+				<in2 component_id="414"/>
+			</c19>
+			<c20 id="418" i="5">
+				<pos x="-6.5" y="-21.5"/>
+				<in1 component_id="230"/>
+			</c20>
+			<c21 id="421">
+				<pos x="2.25" y="-20.25"/>
+				<in1 component_id="449"/>
+				<in2 component_id="425"/>
+			</c21>
+			<c22 id="422">
+				<pos x="7.5" y="-19.75"/>
+				<in1 component_id="445"/>
+				<in2 component_id="425"/>
+			</c22>
+			<c23 id="425">
+				<pos x="0.5" y="-22"/>
+				<in1 component_id="429"/>
+				<in2 component_id="562"/>
+			</c23>
+			<c24 id="429">
+				<pos x="-1.25" y="-22"/>
+				<in1 component_id="447"/>
+				<in2 component_id="430"/>
+			</c24>
+			<c25 id="430" m="0">
+				<pos x="-1.25" y="-22.5"/>
+				<in1 component_id="425"/>
+			</c25>
+			<c26 id="436" count="3">
+				<pos x="11" y="-19"/>
+				<in1 component_id="516"/>
+				<in2 component_id="513"/>
+				<in3/>
+			</c26>
+			<c27 id="387" l="Is emergency" on="Yes" off="No" m="1">
+				<pos x="9.25" y="-19"/>
+				<in1 component_id="422"/>
+			</c27>
+			<c28 id="439" l="Remote Engine" on="On" off="Off" m="1">
+				<pos x="9.25" y="-11.25"/>
+				<in1 component_id="520"/>
+			</c28>
+			<c29 id="445" e="(x&amp;y&amp;z)|(w&amp;!(a^b))">
+				<pos x="5.75" y="-21.25"/>
+				<in1 component_id="390"/>
+				<in2 component_id="421"/>
+				<in3 component_id="398"/>
+				<in4 component_id="407"/>
+				<in5 component_id="170"/>
+				<in6 component_id="223"/>
+			</c29>
+			<c30 id="446">
+				<pos x="9.25" y="-19.75"/>
+				<in1 component_id="422"/>
+				<in2 component_id="404"/>
+			</c30>
+			<c31 id="447" e="x|y|z">
+				<pos x="-3" y="-22.5"/>
+				<in1 component_id="448"/>
+				<in2 component_id="379"/>
+				<in3 component_id="382"/>
+			</c31>
+			<c32 id="448" m="2">
+				<pos x="-4.75" y="-21.5"/>
+				<in1 component_id="418"/>
+			</c32>
+			<c33 id="449" e="x&amp;(y|z)&amp;!w">
+				<pos x="0.5" y="-20.75"/>
+				<in1 component_id="170"/>
+				<in2 component_id="378"/>
+				<in3 component_id="414"/>
+				<in4 component_id="425"/>
+			</c33>
+			<c34 id="450">
+				<pos x="9.25" y="-20.5"/>
+				<in1 component_id="166"/>
+				<in2 component_id="422"/>
+			</c34>
+			<c35 id="491" l="Emergency pending" on="on" off="off" m="1">
+				<pos x="4" y="-19"/>
+				<in1 component_id="421"/>
+			</c35>
+			<c36 id="497">
+				<pos x="7.5" y="-5"/>
+				<in1 component_id="589"/>
+			</c36>
+			<c37 id="498" i="4">
+				<pos x="7.5" y="-8"/>
+				<in1 component_id="589"/>
+			</c37>
+			<c38 id="499" i="3">
+				<pos x="6" y="-15.75"/>
+				<in1 component_id="590"/>
+			</c38>
+			<c39 id="500" i="2">
+				<pos x="7.5" y="-6.5"/>
+				<in1 component_id="589"/>
+			</c39>
+			<c40 id="502" i="5">
+				<pos x="7.5" y="-9.5"/>
+				<in1 component_id="589"/>
+			</c40>
+			<c41 id="513" i="2">
+				<pos x="5.75" y="-4.25"/>
+				<in1 component_id="590"/>
+			</c41>
+			<c42 id="516">
+				<pos x="5.75" y="-2.75"/>
+				<in1 component_id="590"/>
+			</c42>
+			<c43 id="520">
+				<pos x="7.5" y="-11.5"/>
+				<in1 component_id="622"/>
+				<in2 component_id="521"/>
+			</c43>
+			<c44 id="521">
+				<pos x="5.75" y="-13.25"/>
+				<in1 component_id="515"/>
+			</c44>
+			<c45 id="523" e="x*3.6">
+				<pos x="7.5" y="-2.75"/>
+				<in1 component_id="516"/>
+			</c45>
+			<c46 id="561">
+				<pos x="2.25" y="-20.75"/>
+				<n text="3" value="3"/>
+			</c46>
+			<c47 id="562">
+				<pos x="-1.25" y="-23"/>
+				<n text="5" value="5"/>
+			</c47>
+			<c48 id="566">
+				<pos x="7.5" y="-2"/>
+				<in1 component_id="589"/>
+			</c48>
+			<c49 id="576" i="3">
+				<pos x="7.5" y="-7.25"/>
+				<in1 component_id="589"/>
+			</c49>
+			<c50 id="504" l="Target Speed (kmh)" m="2">
+				<pos x="9.25" y="-3"/>
+				<in1 component_id="523"/>
+				<in2 component_id="515"/>
+			</c50>
+			<c51 id="577" l="Current speed (kmh)" m="2">
+				<pos x="9.25" y="-3.75"/>
+				<in1 component_id="615"/>
+				<in2 component_id="515"/>
+			</c51>
+			<c52 id="505" l="Speed PID out" m="2">
+				<pos x="9.25" y="-4.5"/>
+				<in1 component_id="513"/>
+				<in2 component_id="515"/>
+			</c52>
+			<c53 id="506" l="Throttle Out" m="2">
+				<pos x="9.25" y="-5.25"/>
+				<in1 component_id="497"/>
+				<in2 component_id="515"/>
+			</c53>
+			<c54 id="508" l="Brake Out" m="2">
+				<pos x="9.25" y="-6"/>
+				<in1 component_id="617"/>
+				<in2 component_id="515"/>
+			</c54>
+			<c55 id="509" l="Dynamics out" m="2">
+				<pos x="9.25" y="-6.75"/>
+				<in1 component_id="500"/>
+				<in2 component_id="515"/>
+			</c55>
+			<c56 id="575" l="Predictive traction factor" m="2">
+				<pos x="9.25" y="-7.5"/>
+				<in1 component_id="576"/>
+				<in2 component_id="515"/>
+			</c56>
+			<c57 id="507" l="Corrective traction factor" m="2">
+				<pos x="9.25" y="-8.25"/>
+				<in1 component_id="498"/>
+				<in2 component_id="515"/>
+			</c57>
+			<c58 id="512" l="Wheel rps" m="2">
+				<pos x="9.25" y="-9"/>
+				<in1 component_id="621"/>
+				<in2 component_id="515"/>
+			</c58>
+			<c59 id="511" l="Wheel / Speed diff" m="2">
+				<pos x="9.25" y="-9.75"/>
+				<in1 component_id="502"/>
+				<in2 component_id="515"/>
+			</c59>
+			<c60 id="589" script='scr,i,o,m=screen,input,output,math
+pgn,pgb,gn,gb,sn,sb=property.getNumber,property.getBool,i.getNumber,i.getBool,o.setNumber,o.setBool
+abs,min,max,pi=m.abs,m.min,m.max,m.pi
+
+function clamp(a,b,c) -- value, min, max
+	return max(b, min(c, a))
+end
+
+function lerp(a,b,t)
+	t = max(0, min(1, t))
+	return a*(1-t)+b*t
+end
+
+-- Predictive anti-slip module
+function predictive_antislip(max_allow_error, wheel_size)
+	return {
+		max_allow_error = max_allow_error,
+		wheel_size = wheel_size,
+		allowed_error = 0,
+		traction_gain = 0,
+		traction_limit_p = 0,
+
+		run = function(self, current, rps, slip, o_s)
+			local wheel_speed_error = abs((current / self.wheel_size) - rps)
+			local limit_adjust_p = 0
+
+			if slip then
+				limit_adjust_p = 1 / 100
+			elseif self.allowed_error - wheel_speed_error &gt;= 0.4 - 0.05 * (max(0, 10 - abs(current))) then
+				limit_adjust_p = -1 / 600
+			end
+
+			self.allowed_error = self.max_allow_error-- clamp(self.allowed_error - limit_adjust_p, 2.25, self.max_allow_error)
+			local target_error = self.allowed_error*.95
+			
+			local lower = self.allowed_error - 0.3
+
+			if wheel_speed_error &gt;= self.allowed_error or slip then
+				self.traction_gain = min(self.traction_gain + 0.02, 12)
+			elseif wheel_speed_error &lt;= lower then
+				self.traction_gain = max(self.traction_gain - 0.005, 0)
+			end
+			
+
+			local traction_limit = 1-clamp((wheel_speed_error-self.allowed_error)*(self.traction_gain + 3)*8/3,0,1)
+				
+			local traction_limit_f = traction_limit * 0.005 + self.traction_limit_p * 0.995
+			self.traction_limit_p = traction_limit_f
+			return traction_limit_f, wheel_speed_error end
+	}
+end
+
+-- Corrective anti-slip module
+function corrective_antislip(sensitivity)
+	return {
+		sensitivity = sensitivity,
+		slip_long = 0,
+		grip_duration = 0,
+		traction_limit = 0,
+		last_slip = 0,
+		last_slip_speed = 0,
+		slip_pulse = false,
+
+		run = function(self, thr_o, thr_i, cur_speed, slip, reset_pulse)
+			local moving = abs(cur_speed) &gt; 0.5
+			local close_last_thr = abs(thr_o - self.last_slip) &lt; 0.02 and abs(self.last_slip)&gt;0.05
+			local close_last_speed = close_last_thr and abs(cur_speed - self.last_slip_speed) &lt; 0.5
+			local limit_adjust = 0
+
+			if slip then
+				self.slip_long = min(self.slip_long + 1, 21)
+				if not self.slip_pulse then
+					self.last_slip = thr_o
+					self.last_slip_speed = cur_speed
+				end
+				self.grip_duration = 0
+				if close_last_thr then
+					limit_adjust = 1 / (4500 - self.slip_long * 210)
+				else
+					limit_adjust = 1 / 2000
+				end
+			elseif self.grip_duration &gt; 20 and moving then
+				self.slip_long = 0
+				if close_last_thr then
+					if not close_last_speed then
+						limit_adjust = -1 / 20000
+					end
+				else
+					limit_adjust = -1 / 2000
+				end
+			else
+				self.grip_duration = min(self.grip_duration + 1, 61)
+			end
+
+			if reset_pulse then
+				self.traction_limit = 0
+			end
+
+			self.traction_limit = clamp(self.traction_limit - limit_adjust * self.sensitivity, 0.25, min(1, abs(thr_i + 0.1)))
+			self.slip_pulse = slip
+
+			return self.traction_limit
+		end
+	}
+end
+
+
+wheel_size = pgb("Wheel size") and pi or 3*pi/5
+traction_system = pgn("Traction system")
+thr_manip = pgb("Throttle out")
+
+predictive_as = predictive_antislip(2.85, wheel_size)
+corrective_as = corrective_antislip(1)
+brake_corrective_as = corrective_antislip(3)
+dyn_corrective_as = corrective_antislip(3)
+
+thr_out = 0
+brake_out = 0
+dyn_out = 0
+
+function onTick()
+set_speed = gn(1)
+current_speed = gn(2)
+thr_in = gn(3)
+brake_in = gn(4)
+dyn_in = gn(5)
+wheel_rps= gn(6)
+
+reverse = gb(3)
+reset_pulse = gb(4)
+slip = gb(7)
+overspeed = gb(8)
+
+
+--thr abs or -1 to 1
+if thr_manip then
+	if reverse then
+		thr = abs(min(thr_in, 0))
+	else
+		thr = max(thr_in, 0)
+	end
+else
+	thr = thr_in
+end
+
+predictive_out, wheel_speed_diff = predictive_as:run(current_speed, wheel_rps, slip, overspeed)
+corrective_out = corrective_as:run(thr_out, thr, current_speed, slip, reset_pulse)
+brake_as_out = brake_corrective_as:run(brake_out, 1, abs(current_speed)+1, slip, false)
+dyn_as_out = dyn_corrective_as:run(dyn_out, min(dyn_in+.5,1), current_speed, slip, false)
+
+if traction_system == 1 then -- corrective / steam style
+	--thr_out = lerp(0,thr,corrective_out)
+	thr_out = clamp(thr, -corrective_out, corrective_out)
+elseif traction_system == 2 then -- predictive / wheel rps
+	thr_out = lerp(0,thr,predictive_out)
+elseif traction_system == 3 then -- nothing
+	thr_out = thr * 1
+else
+	thr_out = thr * 0
+end
+
+brake_out = brake_in * brake_as_out
+dyn_out = dyn_in * dyn_as_out
+
+sn(1, thr_out)
+sn(2, brake_out)
+sn(3, dyn_out)
+sn(4, predictive_out)
+sn(5, corrective_out)
+sn(6, wheel_speed_diff)
+sn(7, wheel_rps)
+sb(1, reverse)
+
+end
+'>
+				<pos x="5.75" y="-2"/>
+				<in1 component_id="624"/>
+			</c60>
+			<c61 id="590" script='scr,i,o,m=screen,input,output,math
+pgn,pgb,gn,gb,sn,sb=property.getNumber,property.getBool,i.getNumber,i.getBool,o.setNumber,o.setBool
+abs,min,max,pi=m.abs,m.min,m.max,m.pi
+
+
+min_speed=2/3.6 -- 2 kmh target speed deadzone
+max_diff_p=3.1 --pgn("Max difference between Wheels and Speed ( default 3.3)")
+dir_t_dead = 0.05 -- direct thr deadzone
+dyn_max_coast = 0.8 -- dynamic brakes max on coast mode
+steam_rev = false
+sp_pid_max = 1
+sp_pid_min = -1
+dyn_coast = 0
+current_speed_hold = 0
+pid_a=pgn("Speed Pid aggressiveness")
+max_accel=pgn("Acceleration limit (m/s^2)")/10
+p_brake=true--pgb("Parking Brake if No Master")
+cut_thr_brk=pgb("Throttle when Braking")
+cut_thr_dyn=pgb("Throttle when Dynamic Braking")
+Thr_Type=pgn("Throttle Type") -- 1 = set speed, 2 = direct (no pid all balls)
+coast_type=pgn("Coast Style") -- 1=thr no care, 2 = thr limit to dir, 3 = dynamics + 2
+abs_thr=pgb("Throttle out")
+
+
+function clamp(a,b,c) -- value, min, max
+	return max(b, min(c, a))
+end
+
+function round1(x)
+	if x &gt;= 0 then
+		return m.floor(x * 10 + 0.5) / 10
+	else
+		return m.ceil(x * 10 - 0.5) / 10
+	end
+end
+
+function PID(Kp, Ki, Kd, alpha)
+	return {
+		Kp = Kp,
+		Ki = Ki,
+		Kd = Kd,
+		alpha = alpha,
+		integral = 0,
+		last_error = 0,
+		filtered_error = 0,
+		run = function(self, sp, pv, reset, Min, Max)
+			local error = sp - pv
+			local Kp_s = self.Kp
+			local Kd_s = self.Kd
+			local Ki_s = self.Ki
+			if reset then
+				self.integral = 0
+			end
+			self.filtered_error = self.alpha * error + (1 - self.alpha) * self.filtered_error
+			local derivative = self.filtered_error - self.last_error
+			self.last_error = self.filtered_error
+			local p_term = Kp_s * error
+			local d_term = Kd_s * derivative
+			self.integral = clamp(self.integral + error * Ki_s, Min, Max)
+			local output = p_term + self.integral + d_term
+			return clamp(output, Min, Max)
+		end
+	}
+end
+
+speed_pid = PID(0.01*pid_a, 0.0001*pid_a, 0.005*pid_a,0.9)
+
+
+function onTick()
+master = gb(1)
+master_in_chain = gb(2)
+opposite = gb(3) -- opposite dir to master
+tcp_emergency = gb(4)
+tcp_req_emergency = gb(5)
+tcp_engine = gb(6)
+
+ui_slip = gb(7) -- un used ??
+ui_emergency_set = gb(8)
+ui_emergency_reset = gb(9)
+ui_engine = gb(10)
+ui_pass_emergency_set = gb(11)
+p_brake_disable = gb(12)
+
+tcp_t = gn(4) -- main bus speed
+tcp_b = gn(5) -- main bus brake
+tcp_dyn = 0 -- tcp dynamic brake -- needs assinged ch
+current_speed = gn(7)
+ui_t = gn(8) -- ui speed
+ui_b = gn(9) -- ui brake
+ui_dyn = gn(10) -- ui dynamic brakes
+
+
+-- who is controller
+if master then				-- this is master
+	set_speed = ui_t
+	set_brake = ui_b
+	set_dyn = ui_dyn
+	
+elseif not master_in_chain then -- no master in chain
+	set_speed = 0
+	if p_brake and not p_brake_disable then
+		set_brake = 1
+		set_dyn = 1
+	else
+		set_brake = 0
+		set_dyn = 0
+	end
+	
+else						-- master in chain
+	if opposite then
+		set_speed = -tcp_t
+	else
+		set_speed = tcp_t
+	end
+	set_brake = tcp_b
+	set_dyn = tcp_dyn
+end
+
+
+-- 	reset pulse for 1 tick
+r_2 = set_dyn &gt; 0.05 or abs(set_speed)&lt;1 or set_brake &gt; 0.05
+reset_pulse = (r_2 and not r_1) or (r_1 and not r_2)
+r_1 = r_2
+
+
+-- 	Target speed and Limits rate of change
+if Thr_Type == 1 then -- set_speed thr type
+	set_speed_out = set_speed &gt;= 0 and clamp(set_speed, -1, current_speed + max_accel) 
+									or clamp(set_speed, current_speed - max_accel, 1)
+
+elseif Thr_Type == 2 then -- direct thr type
+	dir_speed_gain = round1(set_speed)*max_accel*2
+	
+	set_speed_out = current_speed &gt;= 0 and current_speed + clamp(dir_speed_gain,-5,max_accel)
+										or current_speed + clamp(dir_speed_gain,-max_accel,5)
+else
+	set_speed_out = 0
+end
+
+-- 	Coast limits
+overspeed = abs(current_speed) &gt; abs(set_speed_out)+.5 
+			and current_speed * set_speed_out &gt;= -0.01 -- for case of target is +10 and cur = -5
+
+if abs(current_speed) &lt; min_speed*2 or (coast_type==1 and not abs_thr) then
+	-- if near min speed or using thr to slow down
+	sp_pid_max = 1
+	sp_pid_min = -1
+	dyn_coast = 0
+elseif (coast_type &gt;= 2 and overspeed) or abs_thr then
+	-- no thr used to slow down or thr range is 0 to 1, needs to slow for reverse
+	-- this only engages if overspeed
+	if set_speed_out &gt; 0 then
+		sp_pid_max = 1
+		sp_pid_min = -0.01
+	else
+		sp_pid_max = 0.01
+		sp_pid_min = -1
+	end
+	
+	if coast_type == 3 and overspeed then
+	-- same as above but also apply dynamic brakes
+		dyn_coast = clamp(((abs(current_speed)-abs(set_speed))*.2),0,dyn_max_coast)
+	else
+		dyn_coast = 0
+	end
+else
+	sp_pid_max = 1
+	sp_pid_min = -1
+	dyn_coast = 0
+end
+
+-- 	Throttle to extenders
+thr_out_on = (cut_thr_brk or set_brake &lt;= 0.02) and
+			 (cut_thr_dyn or set_dyn &lt;= 0.02) and
+			 abs(set_speed) &gt;= min_speed
+
+if thr_out_on then
+	if Thr_Type == 1 or not master then -- set speed
+		thr_out = speed_pid:run(set_speed_out, current_speed, reset_pulse, sp_pid_min, sp_pid_max)
+	elseif Thr_Type == 2 then -- direct throttle
+		if abs(set_speed) &lt; dir_t_dead then
+			thr_out = 0
+		else
+			thr_out = set_speed -- set_speed input is now direct thr
+		end
+	end
+else
+	thr_out = 0
+end
+
+
+--	Emergency fun and giggles that still need to be done but F that
+req_emergency = ui_emergency_set or ui_pass_emergency_set
+emergency_stop = false
+--
+
+-- 	reverser
+if abs(current_speed) &lt; min_speed*3 then
+	steam_rev_out = set_speed_out &lt; 0
+end
+	
+
+engine_out = tcp_engine or ui_engine
+brake_out = set_brake
+dyn_out = set_dyn + dyn_coast
+
+sn(1, set_speed_out)
+sn(2, current_speed)
+sn(3, thr_out)
+sn(4, brake_out)
+sn(5, dyn_out)
+sn(6, gn(11)) -- wheel rps remove for 1.4
+
+sb(1, master)
+sb(2, engine_out)
+sb(3, steam_rev_out)
+sb(4, emergency_stop)
+sb(5, req_emergency)
+sb(6, reset_pulse)
+sb(7, gb(13)) -- slip, remove for 1.4
+sb(8, overspeed)
+
+end'>
+				<pos x="4" y="-2"/>
+				<in1 component_id="605"/>
+			</c61>
+			<c62 id="591" name="Throttle Type">
+				<pos x="4" y="2"/>
+				<items>
+					<i l="Set Speed">
+						<v text="1" value="1"/>
+					</i>
+					<i l="Direct throttle">
+						<v text="2" value="2"/>
+					</i>
+				</items>
+			</c62>
+			<c63 id="592" name="Speed Pid aggressiveness">
+				<pos x="4" y="1.5"/>
+				<min text="1" value="1"/>
+				<max text="10" value="10"/>
+				<int text="0.5" value="0.5"/>
+				<v text="5" value="5"/>
+			</c63>
+			<c64 id="593" name="Acceleration limit (m/s^2)">
+				<pos x="4" y="1"/>
+				<min text="2" value="2"/>
+				<max text="20" value="20"/>
+				<int text="0.5" value="0.5"/>
+				<v text="4" value="4"/>
+			</c64>
+			<c65 id="594" n="Throttle when Braking" on="Throttle enabled" off="Throttle disabled" v="true">
+				<pos x="4" y="0.5"/>
+			</c65>
+			<c66 id="595" n="Throttle when Dynamic Braking" on="Throttle enabled" off="Throttle disabled" v="true">
+				<pos x="4"/>
+			</c66>
+			<c67 id="597" name="Coast Style" i="2">
+				<pos x="4" y="-1"/>
+				<items>
+					<i l="Use throttle to slow down">
+						<v text="1" value="1"/>
+					</i>
+					<i l="Thr is 0 if coast">
+						<v text="2" value="2"/>
+					</i>
+					<i l="Apply Dynamics if coast">
+						<v text="3" value="3"/>
+					</i>
+				</items>
+			</c67>
+			<c68 id="598" name="Traction system">
+				<pos x="5.75"/>
+				<items>
+					<i l="Corrective">
+						<v text="1" value="1"/>
+					</i>
+					<i l="Predictive">
+						<v text="2" value="2"/>
+					</i>
+					<i l="None">
+						<v text="3" value="3"/>
+					</i>
+				</items>
+			</c68>
+			<c69 id="599" n="Wheel size" on="Medium" off="Small" v="true">
+				<pos x="5.75" y="-0.5"/>
+			</c69>
+			<c70 id="600" n="Throttle out" on="Steam / Clutch" off="-1 to 1" v="true">
+				<pos x="5.75" y="-1"/>
+			</c70>
+			<c71 id="605" count="5" offset="6">
+				<pos x="2.25" y="-3"/>
+				<inc component_id="606"/>
+				<in1 component_id="293"/>
+				<in2 component_id="607"/>
+				<in3 component_id="608"/>
+				<in4 component_id="614"/>
+				<in5/>
+			</c71>
+			<c72 id="606" count="7" offset="6">
+				<pos x="2.25" y="-1.25"/>
+				<inc component_id="152"/>
+				<in1 component_id="609"/>
+				<in2 component_id="610"/>
+				<in3 component_id="611"/>
+				<in4 component_id="612"/>
+				<in5 component_id="384"/>
+				<in6 component_id="613"/>
+				<in7/>
+			</c72>
+			<c73 id="607">
+				<pos x="0.5" y="-2.5"/>
+				<in1 component_id="230"/>
+			</c73>
+			<c74 id="608" i="1">
+				<pos x="0.5" y="-2.75"/>
+				<in1 component_id="230"/>
+			</c74>
+			<c75 id="609">
+				<pos x="0.5"/>
+				<in1 component_id="230"/>
+			</c75>
+			<c76 id="610" i="1">
+				<pos x="0.5" y="-0.25"/>
+				<in1 component_id="230"/>
+			</c76>
+			<c77 id="611" i="2">
+				<pos x="0.5" y="-0.5"/>
+				<in1 component_id="230"/>
+			</c77>
+			<c78 id="612" i="3">
+				<pos x="0.5" y="-0.75"/>
+				<in1 component_id="230"/>
+			</c78>
+			<c79 id="613" i="5">
+				<pos x="0.5" y="-1.25"/>
+				<in1 component_id="230"/>
+			</c79>
+			<c80 id="614" i="2">
+				<pos x="0.5" y="-3"/>
+				<in1 component_id="230"/>
+			</c80>
+			<c81 id="615" e="x*3.6">
+				<pos x="7.5" y="-3.5"/>
+				<in1 component_id="616"/>
+			</c81>
+			<c82 id="616" i="1">
+				<pos x="5.75" y="-3.5"/>
+				<in1 component_id="590"/>
+			</c82>
+			<c83 id="617" i="1">
+				<pos x="7.5" y="-5.75"/>
+				<in1 component_id="589"/>
+			</c83>
+			<c84 id="618" l="OverSpeed" on="on" off="off" m="1">
+				<pos x="9.25" y="-10.25"/>
+				<in1 component_id="620"/>
+			</c84>
+			<c85 id="619" i="7">
+				<pos x="5.75" y="-10.25"/>
+				<in1 component_id="590"/>
+			</c85>
+			<c86 id="620">
+				<pos x="7.5" y="-10.5"/>
+				<in1 component_id="619"/>
+				<in2 component_id="521"/>
+			</c86>
+			<c87 id="621" i="6">
+				<pos x="7.5" y="-8.75"/>
+				<in1 component_id="589"/>
+			</c87>
+			<c88 id="390" n="Remote emergency" on="Enabled" off="Disabled" v="true">
+				<pos x="4" y="-23"/>
+			</c88>
+			<c89 id="515" n="Debug tooltips" on="Dont show" off="Show">
+				<pos x="7.5" y="-13.25"/>
+			</c89>
+			<c90 id="622" i="1">
+				<pos x="5.75" y="-11.25"/>
+				<in1 component_id="590"/>
+			</c90>
+			<c91 id="624" count="1" offset="5">
+				<pos x="4" y="-4.25"/>
+				<inc component_id="625"/>
+				<in1 component_id="299"/>
+			</c91>
+			<c92 id="625" count="1" offset="6">
+				<pos x="4" y="-3.5"/>
+				<inc component_id="590"/>
+				<in1 component_id="340"/>
+			</c92>
+		</component_states>
+		<component_bridge_states>
+			<c0 id="152">
+				<pos x="-8.5" y="-1.75"/>
+			</c0>
+			<c1 id="154">
+				<pos x="12" y="-15"/>
+				<in1 component_id="156"/>
+			</c1>
+			<c2 id="230">
+				<pos x="-8.5" y="-2.25"/>
+			</c2>
+			<c3 id="278">
+				<pos x="11" y="-5.5"/>
+				<in1 component_id="617"/>
+			</c3>
+			<c4 id="281">
+				<pos x="11" y="-4.75"/>
+				<in1 component_id="497"/>
+			</c4>
+			<c5 id="293">
+				<pos x="0.5" y="-2"/>
+			</c5>
+			<c6 id="299">
+				<pos x="2.25" y="-4.25"/>
+			</c6>
+			<c7 id="340">
+				<pos x="2.25" y="-3.5"/>
+			</c7>
+			<c8 id="349">
+				<pos x="11" y="-11"/>
+				<in1 component_id="622"/>
+			</c8>
+			<c9 id="396">
+				<pos x="12.75" y="-19.5"/>
+				<in1 component_id="397"/>
+			</c9>
+			<c10 id="532">
+				<pos x="11" y="-6.25"/>
+				<in1 component_id="500"/>
+			</c10>
+			<c11 id="565">
+				<pos x="11" y="-1.75"/>
+				<in1 component_id="566"/>
+			</c11>
+		</component_bridge_states>
+		<group_states/>
+	</group>
+</microprocessor>
+
